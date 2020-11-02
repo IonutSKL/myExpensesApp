@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import './transaction.dart';
 
 void main() {
@@ -12,6 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Expenses App',
       home: MyHomePage(),
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.lightBlue[800],
+        accentColor: Colors.cyan[600],
+      ),
     );
   }
 }
@@ -43,6 +49,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('My Expenses'),
+        backgroundColor: Colors.blueGrey,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -74,7 +81,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                       padding: EdgeInsets.all(3),
                       child: Text(
-                        tx.amount.toString(),
+                        '\$${tx.amount}',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
@@ -94,7 +101,7 @@ class MyHomePage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          tx.date.toString(),
+                          DateFormat().format(tx.date),
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 13,
