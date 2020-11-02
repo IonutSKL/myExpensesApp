@@ -97,7 +97,7 @@ class MyHomePage extends StatelessWidget {
                           tx.date.toString(),
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 12,
+                            fontSize: 13,
                             color: Colors.blueGrey,
                           ),
                         ),
