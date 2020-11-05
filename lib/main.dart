@@ -52,16 +52,43 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.blueGrey,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Card(
-            color: Colors.blue,
-            child: Container(
-              width: double.infinity,
+          Container(
+            width: double.infinity,
+            child: Card(
+              color: Colors.blue,
               child: Text('Weekly CHART!'),
+              elevation: 5,
             ),
+          ),
+          Card(
             elevation: 5,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Title',
+                    ),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Amount',
+                    ),
+                  ),
+                  RaisedButton(
+                    onPressed: () {},
+                    splashColor: Colors.green,
+                    textColor: Colors.black,
+                    child: Text('Add Transaction'),
+                  ),
+                ],
+              ),
+            ),
           ),
           Column(
             children: transactions.map((tx) {
