@@ -11,8 +11,8 @@ class UserTransactions extends StatefulWidget {
 class _UserTransactionsState extends State<UserTransactions> {
   final List<Transaction> _userTransactions = [
     Transaction(
-      id: 't1',
-      title: 'new shoes',
+      id: 't555',
+      title: 'new mihai shoes',
       amount: 69.99,
       date: DateTime.now(),
     ),

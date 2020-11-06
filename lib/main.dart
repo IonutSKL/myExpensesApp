@@ -22,11 +22,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-
 //String titleInput;
 //String amountInput;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -34,21 +31,29 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('My Expenses'),
         backgroundColor: Colors.blueGrey,
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            child: Card(
-              color: Colors.blue,
-              child: Text('Weekly CHART!'),
-              elevation: 5,
-            ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () {},
           ),
-          UserTransactions(),
         ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: Card(
+                color: Colors.blue,
+                child: Text('Weekly CHART!'),
+                elevation: 100,
+              ),
+            ),
+            UserTransactions(),
+          ],
+        ),
       ),
     );
   }
