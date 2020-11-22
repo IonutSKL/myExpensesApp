@@ -13,14 +13,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Expenses App',
-      home: MyHomePage(),
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
-        accentColor: Colors.amberAccent
-        //brightness: Brightness.dark,
-        //primaryColor: Colors.lightBlue[800],
-        //accentColor: Colors.cyan[600],
-      ),
+          primarySwatch: Colors.deepOrange,
+          accentColor: Colors.amberAccent,
+          fontFamily: 'Quicksand',
+          appBarTheme: AppBarTheme(
+            textTheme: ThemeData.light().textTheme.copyWith(
+                  title: TextStyle(
+                    fontFamily: 'OpenSans',
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+            //brightness: Brightness.dark,
+            //primaryColor: Colors.lightBlue[800],
+            //accentColor: Colors.cyan[600],
+          )),
+      home: MyHomePage(),
     );
   }
 }
@@ -34,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransactions = [
     Transaction(
       id: 't555',
-      title: 'new mihai shoes',
+      title: 'new shoes',
       amount: 69.99,
       date: DateTime.now(),
     ),
@@ -82,7 +91,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Expenses'),
+        title: Text(
+          'My Expenses App',
+          //style: TextStyle(fontFamily: 'Open Sans'),
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
