@@ -15,9 +15,11 @@ class MyApp extends StatelessWidget {
       title: 'Expenses App',
       home: MyHomePage(),
       theme: ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: Colors.lightBlue[800],
-        accentColor: Colors.cyan[600],
+        primarySwatch: Colors.deepOrange,
+        accentColor: Colors.amberAccent
+        //brightness: Brightness.dark,
+        //primaryColor: Colors.lightBlue[800],
+        //accentColor: Colors.cyan[600],
       ),
     );
   }
@@ -81,7 +83,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('My Expenses'),
-        backgroundColor: Colors.blueGrey,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
@@ -110,7 +111,6 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () => _startAddNewTransaction(context),
-        backgroundColor: Colors.blueGrey,
       ),
     );
   }
